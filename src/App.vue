@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import { Marked } from "marked";
 import DOMPurify from "dompurify";
+import { getDocument, setDocument } from "./utils/persistance";
 
-const content = ref("");
-const html = computed(() => DOMPurify.sanitize(marked.parse(content.value)));
+const content = ref(getDocument());
+const html = computed(() =>
+  DOMPurify.sanitize(marked.parse(content.value) as string),
+);
 
 const marked = new Marked({
   gfm: true,
@@ -35,6 +38,10 @@ function saveHTML() {
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
+
+watch(content, (value) => {
+  setDocument(value);
+});
 </script>
 
 <template>
