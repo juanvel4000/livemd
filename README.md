@@ -2,6 +2,8 @@
 
 A  minimalistic WYSIWYG Markdown editor with **live preview**
 
+![LiveMD Screenshot](./assets/screenshot.png)
+
 ## Features
 
 - Uses **GitHub Flavored Markdown**
