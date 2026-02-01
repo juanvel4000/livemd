@@ -1,9 +1,16 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
-
+import { Marked } from "marked";
 const content = ref("");
 
 const html = ref("");
+const marked = new Marked({
+  gfm: true,
+});
+
+watch(content, (newValue, oldValue) => {
+  html.value = marked.parse(newValue);
+});
 </script>
 
 <template>
