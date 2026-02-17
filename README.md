@@ -15,7 +15,7 @@ A  minimalistic WYSIWYG Markdown editor with **live preview**
 
 ## Demo
 
-Try it live on [livemd.juanvel400.xyz](https://livemd.juanvel400.xyz)
+Try it live on [livemd.juanvel400.com](https://livemd.juanvel400.com)
 
 ## Quickstart
 
